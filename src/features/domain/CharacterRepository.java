@@ -5,5 +5,5 @@ import java.util.ArrayList;
 
 public interface CharacterRepository {
 
-    ArrayList<CharacterModel> findAll() = CharacterModel;
+    ArrayList<CharacterModel> findAll();
 }
