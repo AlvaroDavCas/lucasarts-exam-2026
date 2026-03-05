@@ -2,6 +2,7 @@ package features.presentation;
 
 import features.data.CharacterDataRepository;
 import features.data.CharacterMemLocalDataSource;
+import features.domain.AddcharacterModelUseCase;
 import features.domain.CharacterModel;
 import features.domain.GetCharacterModelUseCase;
 
@@ -13,5 +14,11 @@ public class CharacterView {
         GetCharacterModelUseCase getCharacterModelUseCase = new GetCharacterModelUseCase(new CharacterDataRepository(CharacterMemLocalDataSource.newInstance()));
         ArrayList<CharacterModel> characterModels = getCharacterModelUseCase.execute();
         System.out.println(characterModels);
+    }
+
+    public static void saveCharacter () {
+        AddcharacterModelUseCase addcharacterModelUseCase = new AddcharacterModelUseCase(new CharacterDataRepository(CharacterMemLocalDataSource.newInstance()));
+        addcharacterModelUseCase.execute();
+
     }
 }
