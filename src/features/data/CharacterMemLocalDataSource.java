@@ -1,21 +1,32 @@
 package features.data;
 
+import features.domain.CharacterModel;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class CharacterMemLocalDataSource {
 
-    private ArrayList<Character> storage = new ArrayList<>();
+    private static CharacterMemLocalDataSource instance = null;
 
-    public ArrayList<Character> findAll() {
+    private ArrayList<CharacterModel> storage = new ArrayList<>();
+
+    public ArrayList<CharacterModel> findAll() {
         return storage;
     }
 
-    public void save(Character character) {
-        storage.add(character);
+    public void save(CharacterModel characterModel) {
+        storage.add(characterModel);
     }
 
     public void delete(String characterId) {
         storage.removeIf(character -> Objects.equals(character.getId(), characterId));
+    }
+
+    public void newInstance() {
+        if (instance == null) {
+
+        }
+
     }
 }
