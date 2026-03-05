@@ -4,6 +4,7 @@ import features.data.CharacterDataRepository;
 import features.data.CharacterMemLocalDataSource;
 import features.domain.AddcharacterModelUseCase;
 import features.domain.CharacterModel;
+import features.domain.DeleteCharacterUseCase;
 import features.domain.GetCharacterModelUseCase;
 
 import java.util.ArrayList;
@@ -20,5 +21,10 @@ public class CharacterView {
         AddcharacterModelUseCase addcharacterModelUseCase = new AddcharacterModelUseCase(new CharacterDataRepository(CharacterMemLocalDataSource.newInstance()));
         addcharacterModelUseCase.execute();
 
+    }
+
+    public static void deleteCharacter () {
+        DeleteCharacterUseCase deleteCharacterUseCase = new DeleteCharacterUseCase(new CharacterDataRepository(CharacterMemLocalDataSource.newInstance()));
+        deleteCharacterUseCase.execute();
     }
 }

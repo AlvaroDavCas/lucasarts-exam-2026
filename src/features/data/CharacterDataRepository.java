@@ -23,4 +23,9 @@ public class CharacterDataRepository implements CharacterRepository {
         characterMemLocalDataSource.save();
     }
 
+    @Override
+    public void delete(String characterId) {
+        characterMemLocalDataSource.delete(String characterId);
+    }
+
 }
