@@ -18,4 +18,9 @@ public class CharacterDataRepository implements CharacterRepository {
         return characterMemLocalDataSource.findAll();
     }
 
+    @Override
+    public void save() {
+        characterMemLocalDataSource.save();
+    }
+
 }
